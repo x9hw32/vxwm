@@ -1,0 +1,24 @@
+[window]
+padding = { x = 12, y = 12 }
+dynamic_title = true
+opacity = 0.85 # Легкая прозрачность, чтобы обои просвечивали, как на скрине
+
+[font]
+normal = { family = "MesloLGS NF", style = "Regular" }
+bold = { family = "MesloLGS NF", style = "Bold" }
+size = 10.0
+
+# Цветовая схема под неоново-синюю сакуру
+[colors.primary]
+background = "0x050b14" # Глубокий темный
+foreground = "0xe2f1ff" # Светло-голубой текст
+
+[colors.normal]
+black   = "0x050b14"
+red     = "0xff4444"
+green   = "0x00ff88"
+yellow  = "0xffdd55"
+blue    = "0x0088ff" # Твой фирменный синий
+magenta = "0xd444ff"
+cyan    = "0x00d2ff"
+white   = "0xe2f1ff"

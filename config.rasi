@@ -1,0 +1,53 @@
+configuration {
+    modi: "drun";
+    font: "MesloLGS NF 11";
+    show-icons: true;
+    icon-theme: "Adwaitia";
+}
+
+@theme "/dev/null"
+
+* {
+    bg: #050b14;
+    fg: #e2f1ff;
+    accent: #0088ff;
+    border-color: #0088ff;
+    
+    background-color: @bg;
+    text-color: @fg;
+}
+
+window {
+    location: center;
+    anchor:   center;
+    width:    450px;
+    border:   2px;
+    border-radius: 6px;
+    padding:  20px;
+}
+
+inputbar {
+    children: [ entry ];
+    padding: 0 0 10px 0;
+}
+
+entry {
+    placeholder: " Поиск приложений...";
+    text-color: @fg;
+}
+
+listview {
+    lines: 8;
+    columns: 1;
+    fixed-height: false;
+}
+
+element {
+    padding: 6px;
+    border-radius: 4px;
+}
+
+element selected {
+    background-color: @accent;
+    text-color: #ffffff;
+}
