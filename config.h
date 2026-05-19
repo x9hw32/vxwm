@@ -74,7 +74,7 @@ static const int lockfullscreen = 1;
 
 #define LOCK_MOVE_RESIZE_REFRESH_RATE 1
 #if LOCK_MOVE_RESIZE_REFRESH_RATE
-static const int refreshrate = 60;  /* Снизил до 60, чтобы Celeron не задыхался при отрисовке */
+static const int refreshrate = 60;  
 #endif 
 
 static const Layout layouts[] = {
@@ -96,6 +96,8 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* Команды для запуска приложений */
+static char dmenumon[2] = "0";
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]     = { "alacritty", NULL };
 static const char *roficmd[]     = { "rofi", "-show", "drun", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
@@ -168,7 +170,6 @@ static const Button buttons[] = {
 #endif
 	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
-	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },         /* Win+ЛКМ — тащить окно */
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },         /* Win+СКМ — вернуть в тайлинг */
